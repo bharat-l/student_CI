@@ -1,0 +1,145 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Background */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(to right, hsl(216, 71%, 54%), hsl(310, 54%, 55%));
+    color: #333;
+}
+
+/* Container Styling */
+.container {
+    width: 450px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+}
+
+/* Heading Styling */
+#heading {
+    font-size: 28px;
+    font-weight: bold;
+    color: hsl(216, 71%, 54%);
+    margin-bottom: 20px;
+}
+
+/* Form Elements */
+.form-label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-control {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: hsl(216, 71%, 54%);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Show Password Checkbox */
+#check {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Forgot Password Link */
+.forget p {
+    text-align: right;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.forget p a {
+    color: hsl(216, 71%, 54%);
+    text-decoration: none;
+}
+
+.forget p a:hover {
+    text-decoration: underline;
+}
+
+/* Login Button */
+.btn-primary {
+    background-image: linear-gradient(to right, hsl(216, 71%, 54%), hsl(310, 54%, 55%));
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-image: linear-gradient(to right, hsl(310, 54%, 55%), hsl(216, 71%, 54%));
+}
+
+/* Signup Section */
+.signup {
+    margin-top: 20px;
+    font-size: 14px;
+    color: grey;
+}
+
+.signup p {
+    margin-bottom: 10px;
+}
+
+#signup a {
+    font-weight: bold;
+    color: hsl(216, 71%, 54%);
+    text-decoration: none;
+}
+
+#signup a:hover {
+    text-decoration: underline;
+}
+
+/* Modal Styling */
+.modal-content {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.modal-header {
+    background-color: hsl(216, 71%, 54%);
+    color: #fff;
+    border-bottom: none;
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.btn-secondary {
+    background-color: hsl(216, 71%, 54%);
+    color: #fff;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: hsl(216, 71%, 40%);
+}
