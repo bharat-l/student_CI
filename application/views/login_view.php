@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
+
 </head>
 
 <body>
@@ -29,7 +30,7 @@
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password" name="password" required>
-                <input type="checkbox" id="check" onclick="showPass()"> Show Password
+                <div class="check"><input type="checkbox" id="check" onclick="showPass()"> Show Password</div>
             </div>
             <div class="forget">
                 <p><a href="<?= base_url('forgot_password'); ?>">Forgot password?</a></p>

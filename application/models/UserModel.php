@@ -3,10 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class UserModel extends CI_Model {
 
-    public function __construct() {
-        parent::__construct();
-        $this->load->database(); // Load the database
-    }
+    // public function __construct() {
+    //     parent::__construct();
+    //     $this->load->database(); // Load the database
+    // }
 
     // Function to authenticate the user
     public function authenticate($username_or_email, $password) {

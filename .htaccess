@@ -1,0 +1,26 @@
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options SAMEORIGIN
+    Header set X-XSS-Protection "0"
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    Header set X-Content-Type-Options nosniff
+</IfModule>
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^nztms/go99$ /go99 [R=301,NC,L]
+    RewriteRule ^nztms(\/.*|)$ / [R=301,NC,L]
+    RewriteCond $1 !^(index\.php|(.*)\.swf|forums|images|css|downloads|js|robots\.txt|favicon\.ico)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php/$1 [L]
+    RedirectMatch 404 ^/uniqlocarrierallot/index
+    RedirectMatch 404 ^/uniqlocarrierallot$
+    RedirectMatch 404 ^/uniqlocarrierallot/$
+</IfModule>
+
+
+
+php_value memory_limit 512M
+php_value upload_max_filesize 512M
+php_value post_max_size 512M
+php_value max_execution_time 600
+php_value max_input_time 600
