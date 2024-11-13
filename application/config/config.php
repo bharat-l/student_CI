@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://localhost/student/';
-$config['login_url'] = 'login';
+$config['login_url'] = 'LoginController';
 /*
 |--------------------------------------------------------------------------
 | Index File
