@@ -99,6 +99,7 @@ body {
     margin-top: 20px;
     font-size: 14px;
     color: grey;
+    border: none;
 }
 
 .signup p {
@@ -109,6 +110,9 @@ body {
     font-weight: bold;
     color: hsl(216, 71%, 54%);
     text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
 }
 
 #signup a:hover {
@@ -150,4 +154,15 @@ label{
 }
 .check{
     float: left;
+}
+.google-signin-container {
+    width: 100%;
+}
+
+.S9gUrf-YoZ4jf{
+    position: relative !important;
+    margin-top: 20px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

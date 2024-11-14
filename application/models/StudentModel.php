@@ -3,10 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class StudentModel extends CI_Model {
 
-    public function __construct() {
-        parent::__construct();
-        $this->load->database();
-    }
+    // public function __construct() {
+    //     parent::__construct();
+    //     $this->load->database();
+    // }
                                     
     // Fetch all students with pagination
     public function getStudents($limit = 10, $start = 0) {
