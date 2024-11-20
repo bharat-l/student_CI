@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="<?= base_url('assets/css/register.css') ?>" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="Amazon_icon.png">
+    <link rel="icon" type="image/x-icon" href="<?= base_url('/assets/images/login.png'); ?>">
 
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
