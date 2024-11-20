@@ -5,7 +5,7 @@ class Register extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('UserModel');
+        $this->load->model('RegisterModel');
     }
 
     public function index() {
@@ -18,12 +18,12 @@ class Register extends CI_Controller {
         $this->load->library('form_validation');
 
         // Set form validation rules
-        $this->form_validation->set_rules('name', 'Full Name', 'required');
-        $this->form_validation->set_rules('username', 'User Name', 'required');
+        // $this->form_validation->set_rules('name', 'Full Name', 'required');
+        $this->form_validation->set_rules('username', 'User Name', 'required|min_length[3]|max_length[28]');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
         $this->form_validation->set_rules('phnumber', 'Phone Number', 'required|numeric|exact_length[10]');
         $this->form_validation->set_rules('password', 'Password', 'required');
-        $this->form_validation->set_rules('confpass', 'Confirm Password', 'required|matches[password]');
+        // $this->form_validation->set_rules('confpass', 'Confirm Password', 'required|matches[password]');
         $this->form_validation->set_rules('gender', 'Gender', 'required');
 
         if ($this->form_validation->run() == FALSE) {
@@ -32,7 +32,7 @@ class Register extends CI_Controller {
         } else {
             // If validation passes, prepare data for insertion
             $data = array(
-                'name' => $this->input->post('name'),
+                // 'name' => $this->input->post('name'),
                 'user_name' => $this->input->post('username'),
                 'email_address' => $this->input->post('email'),
                 'phone_number' => $this->input->post('phnumber'),
@@ -40,7 +40,7 @@ class Register extends CI_Controller {
                 'gender' => $this->input->post('gender')
             );
 
-            if ($this->UserModel->register_user($data)) {
+            if ($this->RegisterModel->register_user($data)) {
                 redirect('register?success=Registration successful');
             } else {
                 redirect('register?error=Registration failed. Please try again.');

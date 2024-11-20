@@ -13,7 +13,7 @@
 
 <body>
     <div class="container">
-        <form action="<?php echo base_url('register/register_user'); ?>" method="POST" autocomplete="off">
+        <form action="<?php echo base_url('Register/register_user'); ?>" method="POST" autocomplete="off">
             <h2>Registration</h2>
 
             <?php if ($this->input->get('error')): ?>
@@ -23,37 +23,37 @@
             <?php endif; ?>
             <div class="content">
                 <div class="form-group">
-                    <label for="fname">Full Name</label>
+                    <label for="fname">Full Name<span class="req-star errortext">*</span></label>
                     <input type="text" name="name" id="fname" placeholder="Enter your full name" required>
                 </div>
                 <div class="form-group">
-                    <label for="uname">User Name</label>
+                    <label for="uname">User Name<span class="req-star errortext">*</span></label>
                     <input type="text" name="username" id="uname" placeholder="Enter your username" required>
                 </div>
                 <div class="form-group">
-                    <label for="emailid">Email</label>
+                    <label for="emailid">Email<span class="req-star errortext">*</span></label>
                     <input type="email" name="email" id="emailid" placeholder="Enter valid email address" required>
                 </div>
                 <div class="form-group">
-                    <label for="phno">Phone Number</label>
+                    <label for="phno">Phone Number<span class="req-star errortext">*</span></label>
                     <input type="tel" name="phnumber" id="phno" maxlength="10" placeholder="Enter your phone number" required>
                 </div>
                 <div class="form-group">
-                    <label for="passw">Password</label>
+                    <label for="passw">Password<span class="req-star errortext">*</span></label>
                     <input type="password" name="password" id="passw" placeholder="Enter your password" required>
                 </div>
                 <div class="form-group">
-                    <label for="confpass">Confirm Password</label>
+                    <label for="confpass">Confirm Password<span class="req-star errortext">*</span></label>
                     <input type="password" name="confpass" id="confpass" placeholder="Confirm your password" required>
                 </div>
             </div>
-            <label class="gender-title">Gender</label>
+            <label class="gender-title">Gender<span class="req-star errortext">*</span></label>
             <div class="gender-selection">
                 <input type="radio" name="gender" id="male" value="Male"> <label for="male"> Male </label>
                 <input type="radio" name="gender" id="female" value="Female"> <label for="female"> Female </label>
                 <input type="radio" name="gender" id="other" value="Other"> <label for="other"> Other </label>
             </div>
-    
+
             <div class="para">
                 <p> By clicking Sign Up, You agree to our <a href="#">Terms, </a><a href="#"> Privacy Policy</a> and<a href="#"> Cookies Policy</a>. You may receive SMS notifications from us and can opt out at any time. </p>
             </div>

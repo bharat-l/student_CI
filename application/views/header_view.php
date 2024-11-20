@@ -13,7 +13,9 @@
         <a class="navbar-brand" href="#">Student Portal</a>
         <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="<?= base_url('studentController'); ?>">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Results</a></li>
             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
             <li class="nav-item"><a class="nav-link" href="<?= base_url('loginController'); ?>">Logout</a></li>
         </ul>
     </nav>

@@ -15,3 +15,4 @@ class Usermodel extends CI_Model {
         
     }
 }
+?>
