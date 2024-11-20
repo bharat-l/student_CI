@@ -87,7 +87,7 @@
             </div>
             <div class="signup">
                 <p>Or Sign up using</p>
-                <button type="button" id="signup"><a href="<?= base_url('register'); ?>">SIGN UP</a></button>
+                <button type="button" id="signup"><a href="<?= base_url('Register'); ?>">SIGN UP</a></button>
             </div>
             <!-- Error Modal -->
             <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">

@@ -1,24 +1,30 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class UserModel extends CI_Model {
+class RegisterModel extends CI_Model {
 
     public function __construct() {
         parent::__construct();
-        $this->load->database();
+        $this->load->database(); // Load the database
     }
 
-    public function check_existing_user($user_name, $phone_number, $email) {
-        // Check if the username, phone number, or email already exists
-        $this->db->where('user_name', $user_name);
-        $this->db->or_where('phone_number', $phone_number);
-        $this->db->or_where('email_address', $email);
-
-        $query = $this->db->get('register_user');
-        return $query->row_array();
-    }
-
+    /**
+     * Register a new user
+     *
+     * @param array $data Associative array containing user data to be inserted.
+     * @return bool True if insertion is successful, false otherwise.
+     */
     public function register_user($data) {
-        return $this->db->insert('register_user', $data);
+        // Hash the password before storing it
+        $data['password'] = password_hash($data['password'], PASSWORD_BCRYPT);
+
+        // Insert user data into the database
+        if ($this->db->insert('register_user', $data)) {
+            return true;
+        } else {
+            // Log the error if insertion fails
+            log_message('error', 'User registration failed: ' . $this->db->error()['message']);
+            return false;
+        }
     }
 }

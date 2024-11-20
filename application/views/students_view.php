@@ -5,11 +5,11 @@
             <div class="inner-container">
                 <!-- Form inputs -->
                 <div class="form-group">
-                    <label for="studentName">Student name</label>
+                    <label for="studentName">Student name<span class="req-star errortext">*</span></label>
                     <input type="text" class="form-control" name="StudentName" maxlength="30" pattern="[A-Za-z\s]+" placeholder="Enter full name" required>
                 </div>
                 <div class="form-group">
-                    <label for="fatherName">Father name</label>
+                    <label for="fatherName">Father name<span class="req-star errortext">*</span></label>
                     <input type="text" class="form-control" name="FatherName" maxlength="30" pattern="[A-Za-z\s]+" placeholder="Enter father name" required>
                 </div>
                 <div class="form-group">
@@ -17,15 +17,15 @@
                     <input type="text" class="form-control" name="Address" placeholder="Enter full address" required>
                 </div>
                 <div class="form-group">
-                    <label for="Phnumber">Phone number</label>
+                    <label for="Phnumber">Phone number<span class="req-star errortext">*</span></label>
                     <input type="tel" class="form-control" name="Phnumber" placeholder="Enter phone number" maxlength="10" required>
                 </div>
                 <div class="form-group">
-                    <label for="Marks">Marks</label>
+                    <label for="Marks">Marks<span class="req-star errortext">*</span></label>
                     <input type="number" class="form-control" name="Marks" placeholder="Enter your marks" maxlength="3" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email address</label>
+                    <label for="email">Email address<span class="req-star errortext">*</span></label>
                     <input type="email" class="form-control" name="Email" placeholder="Enter your mail address" maxlength="50" required>
                 </div>
                 <div class="submit-btn mt-3">

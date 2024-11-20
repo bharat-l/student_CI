@@ -53,5 +53,6 @@ $route['default_controller'] = 'LoginController'; // Set StudentController as th
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['login'] = 'LoginController/index';
+$route['register'] = 'RegisterController/register';
 
 

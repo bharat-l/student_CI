@@ -13,7 +13,6 @@ class LoginController extends CI_Controller {
     // Display the login page
     public function index() {
         $this->load->view('login_view'); // Load the login form view
-        // $this->load->view('register_view');
     }
 
     // Handle the login form submission
