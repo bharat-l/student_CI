@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="<?= base_url('assets/css/register.css') ?>" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="Amazon_icon.png">
+    <link rel="icon" type="image/x-icon" href="<?= base_url('/assets/images/login.png'); ?>">
 
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
@@ -58,7 +58,7 @@
                 <p> By clicking Sign Up, You agree to our <a href="#">Terms, </a><a href="#"> Privacy Policy</a> and<a href="#"> Cookies Policy</a>. You may receive SMS notifications from us and can opt out at any time. </p>
             </div>
             <div class="registerbtn">
-                <button type="submit" id="registration">Register</button>
+                <button type="submit" id="registration" style="color: white;">Register</button>
             </div>
             <div class="backlink">
                 <a href="loginController">Already have an account? <b>Click here</b></a>

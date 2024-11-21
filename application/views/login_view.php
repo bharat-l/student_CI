@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="<?= base_url('/assets/images/login.png'); ?>">
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- <style>
         .g_id_signin {
 		justify-content: center;
@@ -30,16 +32,18 @@
         <form action="<?= base_url('LoginController/login'); ?>" method="POST">
             <div class="mb-3">
                 <label for="username" class="form-label">Username or Email</label>
+                <i class="fas fa-user"></i>
                 <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
 
-                <div class="mb-3">
+                <div class="mb-4">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                    <div class="lock"><i class="fas fa-lock"></i>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required></div>
 
                     <div class="check"><input type="checkbox" id="check" onclick="showPass()"> Show Password</div>
                 </div>
                 <div class="forget">
-                    <p><a href="<?= base_url('forgot_password'); ?>">Forgot password?</a></p>
+                    <p><a href="<?= base_url('ForgotPassword'); ?>">Forgot password?</a></p>
                 </div>
                 <button type="submit" class="btn btn-primary">Login</button>
                 <!-- <button type="button" onclick="triggerGoogleSignIn()" class="googleSignIn">
@@ -143,54 +147,55 @@
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
-<script>
-    var ID;
-    var fullName;
-    var givenName;
-    var picture;
-    var emailId;
-    function handleCredentialResponse(response) {
-        console.log("test response", response);
-        const responsePayload = jwt_decode(response.credential);
+    <script>
+        var ID;
+        var fullName;
+        var givenName;
+        var picture;
+        var emailId;
 
-        const userData = {
-            ID: responsePayload.sub,
-            fullName: responsePayload.name,
-            givenName: responsePayload.given_name,
-            emailId: responsePayload.email
-        };
+        function handleCredentialResponse(response) {
+            console.log("test response", response);
+            const responsePayload = jwt_decode(response.credential);
 
-        // Check if essential data is present before making an AJAX call
-        if (userData.ID && userData.emailId) {
-            $.ajax({
-                type: "POST",
-                url: "<?php echo base_url('home/oauthgoogle') ?>",
-                data: userData,
-                success: function(response) {
-                    console.log("Data sent to server: ", response);
-                    window.location = "<?php echo base_url('dashboard'); ?>";
-                },
-                error: function(error) {
-                    console.error("Error sending data to server: ", error);
-                    window.location = "<?php echo base_url('home'); ?>";
-                }
-            });
-        } else {
-            console.log("Required user data is missing");
+            const userData = {
+                ID: responsePayload.sub,
+                fullName: responsePayload.name,
+                givenName: responsePayload.given_name,
+                emailId: responsePayload.email
+            };
+
+            // Check if essential data is present before making an AJAX call
+            if (userData.ID && userData.emailId) {
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo base_url('home/oauthgoogle') ?>",
+                    data: userData,
+                    success: function(response) {
+                        console.log("Data sent to server: ", response);
+                        window.location = "<?php echo base_url('dashboard'); ?>";
+                    },
+                    error: function(error) {
+                        console.error("Error sending data to server: ", error);
+                        window.location = "<?php echo base_url('home'); ?>";
+                    }
+                });
+            } else {
+                console.log("Required user data is missing");
+            }
         }
-    }
-</script>
+    </script>
 
-<!-- Include jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-<!-- Include Google Sign-In Platform Script -->
-<!--<script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>-->
+    <!-- Include Google Sign-In Platform Script -->
+    <!--<script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>-->
 
-<!-- jQuery -->
-<!-- <script src="<?php echo $baseurl;?>assets/plugins/jquery/jquery.min.js"></script>
-<script src="<?php echo $baseurl;?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="<?php echo $baseurl;?>assets/dist/js/adminlte.min.js"></script> -->
+    <!-- jQuery -->
+    <!-- <script src="<?php echo $baseurl; ?>assets/plugins/jquery/jquery.min.js"></script>
+<script src="<?php echo $baseurl; ?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo $baseurl; ?>assets/dist/js/adminlte.min.js"></script> -->
 
 
 
