@@ -1,0 +1,75 @@
+        /* Custom styling for header and footer */
+        .form-container {
+            padding: 20px;
+            box-shadow: 0 14px 20px rgba(0, 0, 0, 0.2);
+            margin-top: 15px;
+            background-color: white;
+            border-radius: 8px;
+            overflow-y: auto;
+
+        }
+        .inner-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            width: 95%;
+        }
+
+        .form-group {
+            margin: 5px 0;
+            padding: 12px 20px;
+            border-radius: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            width: 33.33%;
+            justify-content: space-between;
+            border-radius: 28px;
+            border: none;
+        }
+        .form-group input {
+            border-radius: 8px;
+            padding: 12px 20px;
+            background-color: transparent;
+            margin-top: 8px;
+            box-shadow: 0 15px 20px rgba(107, 104, 104, 0.1);
+            border-color: lightcyan;
+            border: none;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            outline: none;
+            transition: box-shadow 0.3s ease-in-out;
+
+        }
+
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-brand {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+            font-size: 18px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .navbar-nav .nav-link:hover{
+            color: lightgray;
+        }
+
+        .submit-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 60px;
+            gap: 25px;
+        }

@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="<?= base_url('assets/css/student_view.css') ?>" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="<?= base_url('/assets/images/login.png'); ?>">
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+</head>
+<body>
 <div class="container mt-5">
     <h2>STUDENT DATA</h2>
     <form action="<?= base_url('StudentController/submit'); ?>" method="POST" id="textForm" autocomplete="off" enctype="multipart/form-data">
@@ -92,3 +104,5 @@
         }
     });
 </script>
+</body>
+</html>

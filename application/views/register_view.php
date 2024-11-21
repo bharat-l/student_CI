@@ -58,7 +58,7 @@
                 <p> By clicking Sign Up, You agree to our <a href="#">Terms, </a><a href="#"> Privacy Policy</a> and<a href="#"> Cookies Policy</a>. You may receive SMS notifications from us and can opt out at any time. </p>
             </div>
             <div class="registerbtn">
-                <button type="submit" id="registration">Register</button>
+                <button type="submit" id="registration" style="color: white;">Register</button>
             </div>
             <div class="backlink">
                 <a href="loginController">Already have an account? <b>Click here</b></a>
