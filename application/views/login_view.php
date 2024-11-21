@@ -31,12 +31,12 @@
         <!-- Login form -->
         <form action="<?= base_url('LoginController/login'); ?>" method="POST">
             <div class="mb-3">
-                <label for="username" class="form-label">Username or Email</label>
+                <label for="username" class="form-label">Username or Email<span class="req-star errortext">*</span></label>
                 <i class="fas fa-user"></i>
                 <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
 
                 <div class="mb-4">
-                    <label for="password" class="form-label">Password</label>
+                    <label for="password" class="form-label">Password<span class="req-star errortext">*</span></label>
                     <div class="lock"><i class="fas fa-lock"></i>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required></div>
 
