@@ -9,9 +9,10 @@ class StudentController extends CI_Controller {
         $this->load->library('session');
         
         // Check if user is logged in
-        // if (!$this->session->userdata('user_id')) {
-        //     redirect('login_view.php');
-        // }
+        if (!$this->session->userdata('user_id')) {
+            redirect('LoginController'); // Redirect only if the user is not logged in
+        }
+        
     }
 
     // Display student data

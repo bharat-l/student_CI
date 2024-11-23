@@ -8,13 +8,28 @@
     <link href="<?= base_url('assets/css/student_view.css') ?>" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="<?= base_url('/assets/images/login.png'); ?>">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=delete" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit_square" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
 
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
 
 <body>
+    <div class="sidebar">
+        <h4 class="text-center">Students Portal</h4>
+        <hr style="background-color: #555;">
+        <a href="<?= base_url('StudentController/dashboard'); ?>"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="<?= base_url('StudentController/profiles'); ?>"><i class="fas fa-user-graduate"></i> Student Information</a>
+        <a href="<?= base_url('StudentController/results'); ?>"><i class="fas fa-file-alt"></i> Results</a>
+        <a href="<?= base_url('StudentController/library'); ?>"><i class="fas fa-book"></i> Library</a>
+        <a href="<?= base_url('StudentController/attendance'); ?>"><i class="fas fa-calendar-check"></i> Attendance</a>
+    </div>
     <div class="container mt-5">
         <h2>STUDENT FORM</h2>
         <form action="<?= base_url('StudentController/submit'); ?>" method="POST" id="textForm" autocomplete="off" enctype="multipart/form-data">
@@ -50,46 +65,48 @@
                         <button type="reset" name="clear" class="btn btn-secondary px-4">CLEAR</button>
                     </div>
                     <div class="form-group">
-                            <form id="uploadForm" enctype="multipart/form-data">
-                                <label for="document"> Student Photo </label>
-                                <input type="file" id="imageInput" name="filename" class="form-control" accept="image/*" onchange="uploadImage()">
-                                <div id="preview">
-                                    <!-- The image preview will be displayed here -->
-                                </div>
-                            </form>
-                        </div>
+                        <form id="uploadForm" enctype="multipart/form-data">
+                            <label for="document"> Student Photo </label>
+                            <input type="file" id="imageInput" name="filename" class="form-control" accept="image/*" onchange="uploadImage()">
+                            <div id="preview">
+                                <!-- The image preview will be displayed here -->
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
             <?php
-                if (isset($_FILES["filename"])) {
-                    // Display the uploaded image
-                    echo '<img src="uploads/' . htmlspecialchars(basename($_FILES["filename"]["name"])) . '" alt="Uploaded Image" style="max-width: 200px;">';
-                }
-                ?>
+            if (isset($_FILES["filename"])) {
+                // Display the uploaded image
+                echo '<img src="uploads/' . htmlspecialchars(basename($_FILES["filename"]["name"])) . '" alt="Uploaded Image" style="max-width: 200px;">';
+            }
+            ?>
         </form>
         <script>
-                function uploadImage() {
-                    var formData = new FormData(document.getElementById("uploadForm"));
-                    var xhr = new XMLHttpRequest();
+            function uploadImage() {
+                var formData = new FormData(document.getElementById("uploadForm"));
+                var xhr = new XMLHttpRequest();
 
-                    xhr.open("POST", "upload.php", true);
+                xhr.open("POST", "upload.php", true);
 
-                    xhr.onload = function() {
-                        if (xhr.status === 200) {
-                            // console.log(xhr);
-                            // If upload is successful, show the image preview
-                            document.getElementById("preview").innerHTML = '<img src="' + xhr.responseText + '" alt="Image Preview" width="300"/>';
-                        } else {
-                            alert("Image upload failed!");
-                        }
-                    };
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        // console.log(xhr);
+                        // If upload is successful, show the image preview
+                        document.getElementById("preview").innerHTML = '<img src="' + xhr.responseText + '" alt="Image Preview" width="300"/>';
+                    } else {
+                        alert("Image upload failed!");
+                    }
+                };
 
-                    xhr.send(formData);
-                }
-            </script>
+                xhr.send(formData);
+            }
+        </script>
 
         <!-- Student table -->
-        <div id="data"> <h3> STUDENTS DATA </h3></div>
+        <div id="data">
+            <h3> STUDENTS DATA </h3>
+        </div>
         <table id="studenttbl" class="display" style="width:100%">
             <thead>
                 <tr>
@@ -112,8 +129,12 @@
                         <td><?= htmlspecialchars($student['marks']); ?></td>
                         <td><?= htmlspecialchars($student['email_address']); ?></td>
                         <td>
-                            <a href="<?= base_url('StudentController/edit/' . $student['id']); ?>" class="btn btn-info">Edit</a>
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" onclick="setDeleteId(<?= $student['id']; ?>)">Delete</button>
+                            <a href="<?= base_url('StudentController/edit/' . $student['id']); ?>" class="btn btn-info">
+                                <span class="material-icons-outlined">edit</span>
+                            </a>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" onclick="setDeleteId(<?= $student['id']; ?>)">
+                                <span class="material-icons-outlined">delete</span>
+                            </button>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -130,21 +151,23 @@
 
     <script>
         $(document).ready(function() {
-        // Initialize DataTable
-        $('#studenttbl').DataTable({
-            "pagingType": "simple_numbers", // Use full_numbers pagination style
-            "lengthChange": true, // Allow changing the number of rows displayed
-            "searching": true,    // Enable search/filter box
-            "ordering": true,     // Enable column sorting
-            "info": true,         // Show table information summary
-            "autoWidth": false,   // Disable automatic column width calculation
-            "pageLength": 10,     // Default number of rows per page
-            "columnDefs": [
-                { "orderable": false, "targets": -1 } // Disable sorting on the last column (Actions)
-            ],
-            
+            // Initialize DataTable
+            $('#studenttbl').DataTable({
+                "pagingType": "simple_numbers", // Use full_numbers pagination style
+                "lengthChange": true, // Allow changing the number of rows displayed
+                "searching": true, // Enable search/filter box
+                "ordering": true, // Enable column sorting
+                "info": true, // Show table information summary
+                "autoWidth": false, // Disable automatic column width calculation
+                "pageLength": 10, // Default number of rows per page
+                "columnDefs": [{
+                        "orderable": false,
+                        "targets": -1
+                    } // Disable sorting on the last column (Actions)
+                ],
+
+            });
         });
-    });
 
         let deleteId = null;
 

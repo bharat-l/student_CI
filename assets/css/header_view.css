@@ -1,0 +1,142 @@
+/* General Header Styling */
+.navbar {
+	padding: 10px 20px;
+	font-size: 16px;
+}
+
+.navbar-brand {
+	font-size: 20px;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+}
+
+.navbar-brand i {
+	font-size: 24px;
+	margin-right: 10px;
+	color: #00aaff;
+}
+
+.navbar-dark .nav-link {
+	color: #fff;
+	margin-right: 10px;
+	position: relative;
+}
+
+.navbar-dark .nav-link:hover {
+	color: #00aaff;
+	text-decoration: none;
+}
+
+/* Dropdown Styling */
+.dropdown-menu {
+	background-color: #333;
+	border: none;
+	padding: 0;
+}
+
+.dropdown-menu .dropdown-item {
+	color: #fff;
+	padding: 10px 20px;
+}
+
+.dropdown-menu .dropdown-item:hover {
+	background-color: #555;
+	color: #00aaff;
+}
+
+/* Nested Dropdowns */
+.dropdown-menu .dropdown-menu {
+	position: absolute;
+	left: 100%;
+	top: 0;
+	margin-left: 0.1rem;
+	display: none;
+	background-color: #333;
+}
+
+.dropdown-menu .dropdown-item:hover .dropdown-menu {
+	display: block;
+}
+
+/* Students Corner Hover Effect */
+#studentsCorner:hover > .dropdown-menu {
+	display: block;
+}
+
+/* Results Hover Effect */
+#results:hover > .dropdown-menu {
+	display: block;
+}
+
+/* Profile Icon Hover Effect */
+#uname:hover > .dropdown-menu {
+	display: block;
+}
+
+/* Profile Initial and Dropdown */
+#uname {
+	position: relative;
+	border-radius: 50%;
+	background-color: #007bff;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#uname .nav-link {
+	display: inline-block;
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+#uname .dropdown-menu {
+	right: 0;
+	left: auto;
+	margin-top: 5px;
+}
+
+#uname .dropdown-item {
+	font-size: 14px;
+	font-weight: normal;
+	color: #fff;
+}
+/* Sidebar styles */
+.sidebar {
+    height: 100vh;
+    width: 250px;
+    background-color: rgb(88, 86, 86);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #00aaff;
+    color: #fff;
+}
+
+.sidebar i {
+    margin-right: 10px;
+}
+
+/* Main content style */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+

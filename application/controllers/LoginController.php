@@ -1,9 +1,11 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class LoginController extends CI_Controller {
+class LoginController extends CI_Controller
+{
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
         $this->load->model('UserModel'); // Load the user model
         $this->load->library('session'); // Load session library
@@ -11,12 +13,17 @@ class LoginController extends CI_Controller {
     }
 
     // Display the login page
-    public function index() {
+    public function index()
+    {
+        if ($this->session->userdata('user_id')) {
+            redirect('StudentController'); // Adjust to your default landing page
+        }
         $this->load->view('login_view'); // Load the login form view
     }
 
     // Handle the login form submission
-    public function login() {
+    public function login()
+    {
         // Get the entered username/email and password
         $input_username = trim($this->input->post('username'));
         $input_password = $this->input->post('password');
@@ -33,8 +40,11 @@ class LoginController extends CI_Controller {
 
         if ($user) {
             // Set session variables for the logged-in user
-            $this->session->set_userdata('user_id', $user['id']);
-            $this->session->set_userdata('user_name', $user['user_name']);
+            $this->session->set_userdata([
+                'user_id' => $user['id'],
+                'user_name' => $user['user_name'],
+                'logged_in' => TRUE
+            ]);
 
             // Redirect to the dashboard (or any protected page)
             redirect('StudentController');
@@ -46,9 +56,9 @@ class LoginController extends CI_Controller {
     }
 
     // Logout function
-    public function logout() {
+    public function logout()
+    {
         $this->session->sess_destroy(); // Destroy the session
         redirect('LoginController');    // Redirect back to login page
     }
 }
-
