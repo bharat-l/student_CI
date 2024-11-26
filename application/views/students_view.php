@@ -60,10 +60,6 @@
                         <label for="email">Email address<span class="req-star errortext">*</span></label>
                         <input type="email" class="form-control" name="Email" placeholder="Enter your mail address" maxlength="50" required>
                     </div>
-                    <div class="submit-btn mt-3">
-                        <button type="submit" value="submit" name="submit" class="btn btn-primary px-4">SUBMIT</button>
-                        <button type="reset" name="clear" class="btn btn-secondary px-4">CLEAR</button>
-                    </div>
                     <div class="form-group">
                         <form id="uploadForm" enctype="multipart/form-data">
                             <label for="document"> Student Photo </label>
@@ -74,6 +70,10 @@
                         </form>
                     </div>
                 </div>
+                    <div class="submit-btn mt-3">
+                        <button type="submit" value="submit" name="submit" class="btn btn-primary px-4">SUBMIT</button>
+                        <button type="reset" name="clear" class="btn btn-secondary px-4">CLEAR</button>
+                    </div>
             </div>
             <?php
             if (isset($_FILES["filename"])) {

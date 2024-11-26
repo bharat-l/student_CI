@@ -30,9 +30,11 @@
                             <li><a class="dropdown-item" href="#">SSC Results</a></li>
                             <li><a class="dropdown-item" href="#">Inter Results</a></li>
                             <li><a class="dropdown-item" href="#">B.Tech Results</a></li>
+                            <li><a class="dropdown-item" href="#">Competitive Results</a></li>
                         </ul>
                     </li>
-                    <li><a class="dropdown-item" href="#">Books</a></li>
+                    <li><a class="dropdown-item" href="#">Library</a></li>
+                    <li><a class="dropdown-item" href="#">Attendance</a></li>
                 </ul>
             </li>
             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
