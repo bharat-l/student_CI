@@ -59,6 +59,7 @@
 
         .navbar {
             background-color: #343a40;
+            height: 60px;
         }
 
         .navbar-brand {
@@ -91,7 +92,7 @@
         }
 
         /* General Layout */
-body, html {
+/* body, html {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -115,14 +116,14 @@ body, html {
 .header i {
     margin-right: 10px;
     color: #00aaff;
-}
+} */
 
 /* Main Layout (Sidebar + Content) */
-.main {
+/* .main {
     display: flex;
     flex: 1;
     height: calc(100vh - 120px); /* Exclude header and footer height */
-}
+} */
 
 /* Sidebar */
 .sidebar {
@@ -133,6 +134,8 @@ body, html {
     flex-direction: column;
     padding-top: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    height: max-content;
 }
 
 .sidebar a {
@@ -150,12 +153,4 @@ body, html {
 
 .sidebar i {
     margin-right: 10px;
-}
-
-/* Content */
-.content {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-    background-color: #f8f9fa;
 }
