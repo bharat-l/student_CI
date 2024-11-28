@@ -18,7 +18,7 @@
 <footer class="footer bg-dark text-white text-center p-3">
      <div class="row">
                 <div class="col-md-6">
-                    <p> Copyright © 2024 Student Portal By Bharat. All rights reserved.</p>
+                         &copy; <?= date('Y'); ?> Students Portal. All Rights Reserved.
                 </div>
                 <div class="col-md-6 social-icons">
                     <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
