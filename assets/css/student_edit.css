@@ -1,0 +1,150 @@
+/* General styling */
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f8f9fa;
+}
+
+/* Sidebar styling */
+.sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 250px;
+	height: 100%;
+	background-color: #343a40;
+	color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px 0;
+}
+
+.sidebar h4 {
+	margin-bottom: 20px;
+	color: #ffffff;
+}
+
+.sidebar a {
+	display: block;
+	width: 100%;
+	color: #ffffff;
+	text-decoration: none;
+	font-size: 16px;
+	padding: 10px 20px;
+	transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+	background-color: #495057;
+}
+
+.sidebar i {
+	margin-right: 10px;
+}
+
+/* Main content container */
+.container {
+	margin-left: 250px; /* Adjust to the sidebar width */
+	padding: 20px;
+	width: calc(100% - 250px); /* Dynamically adjust width */
+	background-color: lightgrey;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+	border-radius: 8px;
+	margin-top: 30px; /* Avoiding overlap with potential fixed headers */
+	margin-bottom: 30px; /* Leaving space for a footer */
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+/* Form styling */
+.container h2 {
+	text-align: center;
+	font-size: 24px;
+	color: #1a0ce9;
+	margin-bottom: 20px;
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+.form-group label {
+	font-weight: bold;
+	color: #495057;
+}
+
+.form-group input {
+	width: 100%;
+	padding: 10px;
+	font-size: 14px;
+	border: 1px solid #ced4da;
+	border-radius: 5px;
+}
+
+.form-group input:focus {
+	border-color: #0d6efd;
+	box-shadow: 0 0 4px rgba(13, 110, 253, 0.25);
+	outline: none;
+}
+
+.submit-btn {
+	display: flex;
+	justify-content: space-between;
+}
+
+.submit-btn .btn1 {
+	background-color: #0d6efd;
+	border: none;
+	color: #ffffff;
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-weight: bold;
+	font-size: 16px;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.submit-btn .btn1:hover {
+	background-color: #0056b3;
+}
+
+.submit-btn a {
+	color: white;
+	text-decoration: none;
+}
+
+/* Footer section */
+.footer {
+	margin-left: 250px; /* Ensure alignment with the sidebar */
+	padding: 20px;
+	background-color: #343a40;
+	color: #ffffff;
+	text-align: center;
+}
+.header i {
+    margin-right: 10px;
+    color: #00aaff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+	.sidebar {
+		width: 100%;
+		height: auto;
+		position: relative;
+	}
+
+	.container {
+		margin-left: 0;
+		width: 100%;
+	}
+
+	.footer {
+		margin-left: 0;
+	}
+}

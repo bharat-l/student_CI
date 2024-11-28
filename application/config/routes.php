@@ -55,5 +55,8 @@ $route['translate_uri_dashes'] = FALSE;
 $route['login'] = 'LoginController/index';
 $route['register'] = 'RegisterController/register';
 $route['student'] = 'StudentController';
+$route['student/edit/(:num)'] = 'student/edit/$1';
+$route['student/update'] = 'student/update';
+
 
 

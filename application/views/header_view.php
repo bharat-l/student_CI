@@ -21,7 +21,7 @@
             <li class="nav-item"><a class="nav-link" href="<?= base_url('studentController'); ?>">Home</a></li>
             <li class="nav-item dropdown" id="studentsCorner">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Students Corner
+                    Students Corner<i class="ph ph-caret-down"> </i>
                 </a>
                 <ul class="dropdown-menu">
                     <li class="dropdown-item dropdown" id="results">

@@ -139,4 +139,13 @@
     margin-left: 250px;
     padding: 20px;
 }
+.ph {
+	font-family: "Phosphor" !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    letter-spacing: 0;
+}
 
