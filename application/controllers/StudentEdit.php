@@ -41,7 +41,7 @@ class StudentEdit extends CI_Controller {
             $result = $this->EditModel->update_student($id, $update_data);
 
             if ($result) {
-                redirect('student/index'); // Redirect to the list or another page
+                redirect('studentController'); // Redirect to the list or another page
             } else {
                 $data['error'] = 'Error updating record.';
                 $data['student'] = $update_data;
