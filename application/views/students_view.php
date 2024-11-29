@@ -32,7 +32,7 @@
     </div>
     <div class="container mt-5">
         <h2>STUDENT FORM</h2>
-        <form action="<?= base_url('StudentController/submit'); ?>" method="POST" id="textForm" autocomplete="off" enctype="multipart/form-data">
+        <form action="<?= base_url('StudentController/insert_student'); ?>" method="POST" id="textForm" autocomplete="off" enctype="multipart/form-data">
             <div class="form-container">
                 <div class="inner-container">
                     <!-- Form inputs -->
@@ -78,7 +78,7 @@
             <?php
             if (isset($_FILES["filename"])) {
                 // Display the uploaded image
-                echo '<img src="uploads/' . htmlspecialchars(basename($_FILES["filename"]["name"])) . '" alt="Uploaded Image" style="max-width: 200px;">';
+                echo '<img src="/uploads' . htmlspecialchars(basename($_FILES["filename"]["name"])) . '" alt="Uploaded Image" style="max-width: 200px;">';
             }
             ?>
         </form>

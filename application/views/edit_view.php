@@ -23,7 +23,7 @@
         <a href="<?= base_url('StudentController/attendance'); ?>"><i class="fas fa-calendar-check"></i> Attendance</a>
     </div>
     <div class="container">
-        <form action="<?= site_url('student/update'); ?>" method="POST" id="textForm" name="formList" autocomplete="off">
+        <form action="<?= base_url('studentEdit/update') ?>" method="POST" id="textForm" name="formList" autocomplete="off">
             <input type="hidden" name="id" value="<?= htmlspecialchars($student['id']) ?>">
             <h2>STUDENT EDIT FORM</h2>
             <div class="form-container">
@@ -52,7 +52,7 @@
                     <input type="email" name="Email" id="mailing" value="<?= htmlspecialchars($student['email_address']) ?>" placeholder="Enter mail address" required>
                 </div>
                 <div class="submit-btn">
-                    <button type="submit" value="update" name="update" class="btn1" id="displayButton"><a href="<?= site_url('StudentController/index'); ?>"> UPDATE </a></button>
+                    <button type="submit" value="update" name="update" class="btn1" id="displayButton"> UPDATE </button>
                     <button type="button" class="btn1"><a href="<?= site_url('StudentController/index'); ?>"> CANCEL </a></button>
                 </div>
             </div>
