@@ -70,10 +70,10 @@
                         </form>
                     </div>
                 </div>
-                    <div class="submit-btn mt-3">
-                        <button type="submit" value="submit" name="submit" class="btn btn-primary px-4">SUBMIT</button>
-                        <button type="reset" name="clear" class="btn btn-secondary px-4">CLEAR</button>
-                    </div>
+                <div class="submit-btn mt-3">
+                    <button type="submit" value="submit" name="submit" class="btn btn-primary px-4">SUBMIT</button>
+                    <button type="reset" name="clear" class="btn btn-secondary px-4">CLEAR</button>
+                </div>
             </div>
             <?php
             if (isset($_FILES["filename"])) {
@@ -132,14 +132,31 @@
                             <a href="<?= base_url('studentEdit/edit/' . $student['id']); ?>" class="btn btn-info">
                                 <span class="material-icons-outlined">edit</span>
                             </a>
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" onclick="setDeleteId(<?= $student['id']; ?>)">
-                                <span class="material-icons-outlined">delete</span>
+                            <button type="button" class="btn btn-danger" id="confirmDeleteBtn" data-bs-toggle="modal" data-bs-target="#deleteModal" onclick="setDeleteId(<?= $student['id']; ?>)">
+                                <span class="material-icons-outlined">delete </span>
                             </button>
                         </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
+        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to delete this student?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-danger" id="confirmDeleteBtnModal" onclick="confirmDelete()">Yes, Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Pagination -->
         <div class="pagination">
@@ -174,12 +191,12 @@
         function setDeleteId(id) {
             deleteId = id;
         }
-
-        document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
+        function confirmDelete(){
+        // document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
             if (deleteId) {
                 window.location.href = "<?= base_url('StudentController/delete/'); ?>" + deleteId;
             }
-        });
+        };
     </script>
 </body>
 
