@@ -24,7 +24,7 @@
     <div class="sidebar">
         <h4 class="text-center">Students Portal</h4>
         <hr style="background-color: #555;">
-        <a href="<?= base_url('StudentController/dashboard'); ?>"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="<?= base_url('DashboardController'); ?>"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         <a href="<?= base_url('StudentController/profiles'); ?>"><i class="fas fa-user-graduate"></i> Student Information</a>
         <a href="<?= base_url('StudentController/results'); ?>"><i class="fas fa-file-alt"></i> Results</a>
         <a href="<?= base_url('StudentController/library'); ?>"><i class="fas fa-book"></i> Library</a>

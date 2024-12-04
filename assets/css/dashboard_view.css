@@ -1,0 +1,101 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-container {
+    margin: 0 auto;
+    padding: 30px;
+    margin-left: 250px;
+}
+
+h2, h3 {
+    color: #333;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Banner Section */
+.banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007BFF;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.banner-item {
+    text-align: center;
+}
+
+.banner-item h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Student Stats Section */
+.student-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.stats-item {
+    background-color: white;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stats-item h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.stats-number {
+    font-size: 2rem;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+/* Attendance Graph Section */
+.attendance-graph {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.attendance-graph h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .student-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stats-item {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .banner {
+        flex-direction: column;
+        text-align: center;
+    }
+}

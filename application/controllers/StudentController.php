@@ -7,8 +7,8 @@ class StudentController extends CI_Controller {
         parent::__construct();
         $this->load->model('StudentModel');
         $this->load->library('session');
-        $this->load->helper('form');
-        $this->load->helper('url');
+        $this->load->helper('form', 'url');
+        // $this->load->helper('url');
         
         // Check if user is logged in
         if (!$this->session->userdata('user_id')) {

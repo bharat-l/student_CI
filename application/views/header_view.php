@@ -15,7 +15,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
-            <i class="fas fa-user-graduate"></i> Student Portal
+            <i class="fas fa-user-graduate"></i> Students Portal
         </a>
         <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="<?= base_url('studentController'); ?>">Home</a></li>
