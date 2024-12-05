@@ -154,3 +154,59 @@
 .sidebar i {
     margin-right: 10px;
 }
+/* Custom Toast Styling */
+/* Toast container */
+.toast-container {
+    position: fixed; /* Ensures it's fixed relative to the viewport */
+    top: 20px; /* Adjust this value to add spacing from the top (header) */
+    right: 20px; /* Adjust the right margin */
+    z-index: 1050; /* Ensure the toasts appear above other content */
+    max-width: 300px; /* Limit max width of the toast */
+    float: right;
+}
+
+/* Toast body text */
+.toast-body {
+    font-size: 14px; /* Adjust font size */
+    font-weight: 500; /* Slightly bold for readability */
+    line-height: 1.4; /* Make the text more readable */
+}
+
+/* Success Toast */
+.toast.bg-success {
+    border-radius: 10px; /* Round the corners */
+    box-shadow: 0 4px 6px rgba(0, 255, 0, 0.1); /* Add a soft shadow */
+}
+
+/* Error Toast */
+.toast.bg-danger {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(255, 0, 0, 0.1); /* Soft red shadow */
+}
+
+/* Toast close button */
+.toast .btn-close {
+    font-size: 18px; /* Adjust close button size */
+    opacity: 0.8; /* Slightly transparent */
+}
+
+/* On hover, make close button more visible */
+.toast .btn-close:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* Animation for showing/hiding the toast */
+.toast {
+    transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.toast.hide {
+    transform: translateY(-20px);
+    opacity: 0;
+}

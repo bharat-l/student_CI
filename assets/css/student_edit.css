@@ -13,7 +13,7 @@ body {
 	left: 0;
 	width: 250px;
 	height: 100%;
-	background-color: #343a40;
+	background-color: #333;
 	color: #ffffff;
 	display: flex;
 	flex-direction: column;
@@ -21,10 +21,10 @@ body {
 	padding: 20px 0;
 }
 
-.sidebar h4 {
+/* .sidebar h4 {
 	margin-bottom: 20px;
 	color: #ffffff;
-}
+} */
 
 .sidebar a {
 	display: block;
@@ -37,7 +37,8 @@ body {
 }
 
 .sidebar a:hover {
-	background-color: #495057;
+	background-color: #00aaff;
+    color: #fff;
 }
 
 .sidebar i {
@@ -148,3 +149,13 @@ body {
 		margin-left: 0;
 	}
 }
+/* Toast container */
+.toast-container {
+	position: absolute;
+    top: 80px; /* Adjust this to match the height of your header */
+    right: 20px !important; /* Positioned 20px from the right side */
+    z-index: 1050; /* Ensure toast is above other content */
+    width: auto; /*imit max width of the toast */
+}
+
+/* You can further adjust the margins or padding as needed for the desired spacing */
