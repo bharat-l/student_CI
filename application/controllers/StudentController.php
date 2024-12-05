@@ -30,18 +30,19 @@ class StudentController extends CI_Controller {
         $student_data = array(
             'student_name' => $this->input->post('StudentName',true),
             'Father_name' => $this->input->post('FatherName',true),
-            'address' => $this->input->post('Address'),
-            'phone_number' => $this->input->post('Phnumber'),
-            'marks' => $this->input->post('Marks'),
-            'email_address' => $this->input->post('Email')
-            
-            
+            'gender' => $this->input->post('gender',true),
+            'Date_of_birth' => $this->input->post('Date_of_birth',true),
+            'address' => $this->input->post('Address', true),
+            'phone_number' => $this->input->post('Phnumber', true),
+            'marks' => $this->input->post('Marks', true),
+            'email_address' => $this->input->post('Email', true)
         );
 
         // Call the insert function in the StudentModel
         $inserted = $this->StudentModel->insert_student($student_data);
 
         if ($inserted) {
+            $this->session->set_flashdata('success', 'Student data has been inserted successfully!');
             // Redirect to the students list page (or any other page after success)
             redirect('studentcontroller');
         } else {

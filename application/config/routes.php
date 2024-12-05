@@ -57,6 +57,9 @@ $route['register'] = 'RegisterController/register';
 $route['student'] = 'StudentController';
 $route['student/edit/(:num)'] = 'student/edit/$1';
 $route['student/update'] = 'student/update';
+// application/config/routes.php
+$route['library'] = 'LibraryController/index';  // Define a route for the library page
+
 
 
 

@@ -30,19 +30,23 @@ class StudentEdit extends CI_Controller {
         if ($this->input->post()) {
             $id = $this->input->post('id');
             $update_data = [
-                'student_name' => $this->input->post('StudentName'),
-                'Father_name'  => $this->input->post('FatherName'),
-                'address'      => $this->input->post('Address'),
-                'phone_number' => $this->input->post('Phnumber'),
-                'marks'        => $this->input->post('Marks'),
-                'email_address'=> $this->input->post('Email'),
+                'student_name' => $this->input->post('StudentName', true),
+                'Father_name'  => $this->input->post('FatherName', true),
+                'gender'       => $this->input->post('gender',true),
+                'Date_of_birth' => $this->input->post('Date_of_birth',true),
+                'address'      => $this->input->post('Address', true),
+                'phone_number' => $this->input->post('Phnumber', true),
+                'marks'        => $this->input->post('Marks', true),
+                'email_address'=> $this->input->post('Email', true),
             ];
 
             $result = $this->EditModel->update_student($id, $update_data);
 
             if ($result) {
+                $this->session->set_flashdata('success', 'Student data updated successfully!');
                 redirect('studentController'); // Redirect to the list or another page
             } else {
+                $this->session->set_flashdata('error', 'Failed to add student. Please try again.');
                 $data['error'] = 'Error updating record.';
                 $data['student'] = $update_data;
                 $this->load->view('student_edit', $data);

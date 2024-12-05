@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
+       <!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script> -->
+
 
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
@@ -27,9 +31,34 @@
         <a href="<?= base_url('DashboardController'); ?>"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         <a href="<?= base_url('StudentController/profiles'); ?>"><i class="fas fa-user-graduate"></i> Student Information</a>
         <a href="<?= base_url('StudentController/results'); ?>"><i class="fas fa-file-alt"></i> Results</a>
-        <a href="<?= base_url('StudentController/library'); ?>"><i class="fas fa-book"></i> Library</a>
+        <a href="<?= base_url('LibraryController'); ?>"><i class="fas fa-book"></i> Library</a>
         <a href="<?= base_url('StudentController/attendance'); ?>"><i class="fas fa-calendar-check"></i> Attendance</a>
     </div>
+      <div class="toast align-items-center text-white bg-success border-0 show" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="true" data-bs-delay="3000">            <!-- Success Toast -->
+            <?php if ($this->session->flashdata('success')): ?>
+                <div class="toast align-items-center text-white bg-success border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            <?= $this->session->flashdata('success'); ?>
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                </div>
+            <?php endif; ?>
+
+            <!-- Error Toast -->
+            <?php if ($this->session->flashdata('error')): ?>
+                <div class="toast align-items-center text-white bg-danger border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            <?= $this->session->flashdata('error'); ?>
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                </div>
+            <?php endif; ?>
+        </div>
+         <!-- Add Bootstrap Toasts HTML structure -->
     <div class="container mt-5">
         <h2>STUDENT FORM</h2>
         <form action="<?= base_url('StudentController/insert_student'); ?>" method="POST" id="textForm" autocomplete="off" enctype="multipart/form-data">
@@ -45,7 +74,22 @@
                         <input type="text" class="form-control" name="FatherName" maxlength="30" pattern="[A-Za-z\s]+" placeholder="Enter father name" required>
                     </div>
                     <div class="form-group">
-                        <label for="Address">Address</label>
+                        <label for="gender">Gender<span class="req-star errortext" style="color: red;">*</span></label>
+                        <select class="form-control" name="gender" id="gender" required>
+                            <option value="">Select gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dateOfBirth">Date of Birth<span class="req-star errortext" style="color: red;">*</span></label>
+                        <input type="date" class="form-control" name="dateOfBirth" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Address">Address<span class="req-star errortext" style="color: red;">*</span></label>
                         <input type="text" class="form-control" name="Address" placeholder="Enter full address" required>
                     </div>
                     <div class="form-group">
@@ -82,7 +126,8 @@
             }
             ?>
         </form>
-        <script>
+       
+       <script>
             function uploadImage() {
                 var formData = new FormData(document.getElementById("uploadForm"));
                 var xhr = new XMLHttpRequest();
@@ -112,6 +157,8 @@
                 <tr>
                     <th>Student name</th>
                     <th>Father name</th>
+                    <th>Gender</th>
+                    <th>Date of birth</th>
                     <th>Address</th>
                     <th>Phone number</th>
                     <th>Marks</th>
@@ -124,6 +171,8 @@
                     <tr>
                         <td><?= htmlspecialchars($student['student_name']); ?></td>
                         <td><?= htmlspecialchars($student['Father_name']); ?></td>
+                        <td><?= htmlspecialchars($student['gender']); ?></td>
+                        <td><?= ($student['Date_of_birth']); ?></td>
                         <td><?= htmlspecialchars($student['address']); ?></td>
                         <td><?= htmlspecialchars($student['phone_number']); ?></td>
                         <td><?= htmlspecialchars($student['marks']); ?></td>
@@ -152,18 +201,18 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-danger" id="confirmDeleteBtnModal" onclick="confirmDelete()">Yes, Delete</button>
+                        <button type="button" class="btn btn-danger" id="confirmDeleteBtnModal" onclick="confirmDelete()">Delete</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Pagination -->
-        <div class="pagination">
+        <!-- <div class="pagination">
             <?php for ($i = 1; $i <= ceil($total_rows / 10); $i++): ?>
                 <a href="<?= base_url('StudentController/index?page=' . $i); ?>"><?= $i; ?></a>
             <?php endfor; ?>
-        </div>
+        </div> -->
     </div>
 
     <script>
@@ -191,13 +240,35 @@
         function setDeleteId(id) {
             deleteId = id;
         }
-        function confirmDelete(){
-        // document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
+
+        function confirmDelete() {
+            // document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
             if (deleteId) {
                 window.location.href = "<?= base_url('StudentController/delete/'); ?>" + deleteId;
             }
         };
     </script>
+   
+       
+         <script>
+            // Show Toast on Page Load if there's any session flash data
+            document.addEventListener('DOMContentLoaded', function() {
+                // Get the toast container
+                var toastContainer = document.getElementById('toast-container');
+
+                // Initialize toast elements
+                var toasts = toastContainer.querySelectorAll('.toast');
+
+                // Show each toast
+                toasts.forEach(function(toast) {
+                    var bootstrapToast = new bootstrap.Toast(toast);
+                    bootstrapToast.show();
+                });
+            });
+        </script>
+     <!-- Bootstrap Toast JavaScript -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+     
 </body>
 
 </html>

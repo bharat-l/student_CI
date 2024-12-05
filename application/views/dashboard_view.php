@@ -14,7 +14,7 @@
         <a href="<?= base_url('DashboardController'); ?>" class="<?= (uri_string() == 'DashboardController') ? 'active' : ''; ?>"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         <a href="<?= base_url('StudentController/profiles'); ?>" class="<?= (uri_string() == 'StudentController/profiles') ? 'active' : ''; ?>"><i class="fas fa-user-graduate"></i> Student Information</a>
         <a href="<?= base_url('StudentController/results'); ?>" class="<?= (uri_string() == 'StudentController/results') ? 'active' : ''; ?>"><i class="fas fa-file-alt"></i> Results</a>
-        <a href="<?= base_url('StudentController/library'); ?>" class="<?= (uri_string() == 'StudentController/library') ? 'active' : ''; ?>"><i class="fas fa-book"></i> Library</a>
+        <a href="<?= base_url('LibraryController'); ?>" class="<?= (uri_string() == 'StudentController/library') ? 'active' : ''; ?>"><i class="fas fa-book"></i> Library</a>
         <a href="<?= base_url('StudentController/attendance'); ?>" class="<?= (uri_string() == 'StudentController/attendance') ? 'active' : ''; ?>"><i class="fas fa-calendar-check"></i> Attendance</a>
     </div>
     <div class="dashboard-container">
