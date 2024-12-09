@@ -9,7 +9,7 @@ const banners = [
   'https://via.placeholder.com/1500x500/fff77f/333333?text=Banner+4'
 ];
 
-function library_page() {
+export const LibraryPage = () => { // Named export
   const [currentBanner, setCurrentBanner] = useState(0);
 
   const handleNext = () => {
@@ -51,5 +51,3 @@ function library_page() {
     </div>
   );
 }
-
-export default library_page;

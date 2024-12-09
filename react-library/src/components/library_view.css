@@ -13,11 +13,15 @@
 }
 
 .banner-container {
-  width: 100%;
+  margin: auto;
+  width: 70%;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: transform 0.5s ease-in-out;
+  border-radius: 10%;
+  padding: 30px;
 }
 
 .banner-container img {
@@ -53,12 +57,19 @@ button {
 }
 
 .library-info h1 {
-  color: #333;
+  color: #ec5858;
+}
+.library-info h2 {
+  color: #ec5858;
+}
+.library-info p {
+  color: #3e4aec;
 }
 
 .resources ul {
   list-style-type: none;
   padding: 0;
+  color: green;
 }
 
 .resources li {
